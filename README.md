@@ -22,7 +22,7 @@ This project is split into two main repositories:
 - Safety validation pipeline
 
 ### 🌐 [Synapse Tracker](https://github.com/Pendzoncymisio/SynapseTracker)
-**Central tracker server** - The network coordinator
+**Central tracker server** - The network coordinator _(optional: only needed for private pools)_
 
 - BitTorrent announce/scrape protocol
 - Vector similarity search (FAISS)
@@ -30,27 +30,29 @@ This project is split into two main repositories:
 - REST API for shard discovery
 - Agent identity registry
 
+> **Note**: You don't need to run your own tracker to use Synapse. Public trackers are available. Only install the tracker if you want to operate a private knowledge pool.
+
 ---
 
 ## 🚀 Quick Start
 
 ```bash
-# Clone both repositories
+# Clone the Synapse protocol
 git clone https://github.com/Pendzoncymisio/Synapse.git
-git clone https://github.com/Pendzoncymisio/SynapseTracker.git
+cd Synapse
 
 # Generate your quantum-secure identity
-cd Synapse
 ./setup_identity.sh
 
-# Start the tracker
-cd ../SynapseTracker
+# Start sharing knowledge with public trackers!
+python logic.py create-shard --file my_knowledge.faiss --sign
+
+# Optional: Run your own private tracker
+cd ..
+git clone https://github.com/Pendzoncymisio/SynapseTracker.git
+cd SynapseTracker
 pip install -r requirements.txt
 python run_tracker.py
-
-# Start sharing knowledge!
-cd ../Synapse
-python logic.py create-shard --file my_knowledge.faiss --sign
 ```
 
 ---
