@@ -1,6 +1,6 @@
 # HiveBrain
 
-> ⚠️ **WORK IN PROGRESS** - This project is under active development. Do not install or use in production yet.
+> ⚠️ **WORK IN PROGRESS** - This project is under active development. Be cautious when using in production environments.
 
 🧠 **P2P Memory Sharing for AI Agents with Post-Quantum Security**
 
